@@ -7,10 +7,6 @@ import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
 
 class RandomChar extends Component {
-  constructor(props) {
-    super(props);
-    this.updateChar();
-  }
 
   state = {
     char: {},
@@ -20,17 +16,27 @@ class RandomChar extends Component {
 
   marvelService = new MarvelService();
 
+  componentDidMount() {
+    this.updateChar();
+    this.timeId = setInterval(this.updateChar, 10000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerId)
+  }
+
   onCharLoaded = (char) => {
-    this.setState({ 
+    this.setState({
       char,
-      loading: false})
+      loading: false
+    })
   }
 
   onError = () => {
-    this.setState({ 
+    this.setState({
       loading: false,
       error: true
-  })
+    })
   }
 
   updateChar = () => {
@@ -45,7 +51,7 @@ class RandomChar extends Component {
     const { char, loading, error } = this.state;
     const errorMessage = error ? <ErrorMessage /> : null;
     const spinner = loading ? <Spinner /> : null;
-    const content = !(loading || error) ? <View char={char}/> : null;
+    const content = !(loading || error) ? <View char={char} /> : null;
 
     return (
       <div className="randomchar">
@@ -72,27 +78,27 @@ class RandomChar extends Component {
   }
 }
 
-const View = ({char}) => {
+const View = ({ char }) => {
   const { name, description, thumbnail, homepage, wiki } = char;
 
   return (
-      <div className="randomchar__block">
-        <img src={thumbnail} alt="Random character" className="randomchar__img" />
-        <div className="randomchar__info">
-          <p className="randomchar__name">{name}</p>
-          <p className="randomchar__descr">
-            {description}
-          </p>
-          <div className="randomchar__btns">
-            <a href={homepage} className="button button__main">
-              <div className="inner">homepage</div>
-            </a>
-            <a href={wiki} className="button button__secondary">
-              <div className="inner">Wiki</div>
-            </a>
-          </div>
+    <div className="randomchar__block">
+      <img src={thumbnail} alt="Random character" className="randomchar__img" />
+      <div className="randomchar__info">
+        <p className="randomchar__name">{name}</p>
+        <p className="randomchar__descr">
+          {description}
+        </p>
+        <div className="randomchar__btns">
+          <a href={homepage} className="button button__main">
+            <div className="inner">homepage</div>
+          </a>
+          <a href={wiki} className="button button__secondary">
+            <div className="inner">Wiki</div>
+          </a>
         </div>
       </div>
+    </div>
   );
 };
 
