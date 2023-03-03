@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import MarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/spinner';
@@ -85,10 +86,10 @@ class CharInfo extends Component {
 
 const View = ({ char }) => {
   const { name, description, thumbnail, homepage, wiki, comics } = char;
-  
-  let imgStyle = {'objectFit' : 'cover'};
+
+  let imgStyle = { 'objectFit': 'cover' };
   if (thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
-      imgStyle = {'objectFit' : 'contain'};
+    imgStyle = { 'objectFit': 'contain' };
   }
 
   return (
@@ -125,6 +126,10 @@ const View = ({ char }) => {
       </ul>
     </>
   )
+}
+
+CharInfo.propTypes = {
+  charId: PropTypes.number
 }
 
 export default CharInfo;
