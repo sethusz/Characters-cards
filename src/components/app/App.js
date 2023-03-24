@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AppHeader from "../appHeader/AppHeader";
 import MainPage from '../pages/MainPage';
 import ComicsPage from '../pages/ComicsPage';
-import SingleComicPage from '../pages/singleComicPage';
+import SingleComicPage from '../pages/SingleComicPage';
 import Page404 from '../pages/404'
 
 const App = () => {

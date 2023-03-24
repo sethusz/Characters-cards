@@ -31,6 +31,8 @@ const ComicsList = () => {
     if (newComicsList.length < 8) {
       ended = true;
     }
+
+
     setComicsList([...comicsList, ...newComicsList]);
     setnewItemLoading(false);
     setOffset(offset + 8);
