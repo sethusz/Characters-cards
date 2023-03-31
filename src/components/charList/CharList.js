@@ -54,6 +54,11 @@ const CharList = (props) => {
         imgStyle = { 'objectFit': 'unset' };
       }
 
+      if (item.thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708.gif') {
+        imgStyle = { 'objectFit': 'unset' };
+      }
+
+
       return (
         <li
           className="char__item"
