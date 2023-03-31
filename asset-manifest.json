@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Characters-cards/static/css/main.a07d2a47.css",
-    "main.js": "/Characters-cards/static/js/main.a1a06dc5.js",
+    "main.js": "/Characters-cards/static/js/main.b7ed56a2.js",
     "static/media/vision.png": "/Characters-cards/static/media/vision.067d4ae1936d64a577ce.png",
     "static/media/mjolnir.png": "/Characters-cards/static/media/mjolnir.61f31e1809f12183a524.png",
     "static/media/Avengers.png": "/Characters-cards/static/media/Avengers.4065c8f9c94e3d8b039a.png",
@@ -9,10 +9,10 @@
     "static/media/Avengers_logo.png": "/Characters-cards/static/media/Avengers_logo.9eaf219344d83362e830.png",
     "index.html": "/Characters-cards/index.html",
     "main.a07d2a47.css.map": "/Characters-cards/static/css/main.a07d2a47.css.map",
-    "main.a1a06dc5.js.map": "/Characters-cards/static/js/main.a1a06dc5.js.map"
+    "main.b7ed56a2.js.map": "/Characters-cards/static/js/main.b7ed56a2.js.map"
   },
   "entrypoints": [
     "static/css/main.a07d2a47.css",
-    "static/js/main.a1a06dc5.js"
+    "static/js/main.b7ed56a2.js"
   ]
 }
