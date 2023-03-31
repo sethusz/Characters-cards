@@ -2,6 +2,7 @@
   "name": "marvel",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sethusz.github.io/Characters-cards/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -43,6 +44,5 @@
   "devDependencies": {
     "gh-pages": "^5.0.0",
     "sass": "^1.58.3"
-  },
-  "homepage": "https://sethusz.github.io/Marvel/"
+  }
 }
