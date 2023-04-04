@@ -1,7 +1,34 @@
-import {useHttp} from '../hooks/http.hook'
+import {useState, useCallback} from 'react'
 
 const  useMarvelService = () => {
-  const {loading, request, error, clearError} = useHttp();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const request = useCallback( async (url,method = 'GET', body = null, headers = {'Content-Type' : 'application/json'}) => {
+
+    setLoading(true)
+
+    try {
+      const response = await fetch(url, {method, body, headers});
+
+      if (!response.ok) {
+        throw new Error(`HTTP error ${response.status}, status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      setLoading(false)
+      return data;
+    } catch(e) {
+      setLoading(false)
+      setError(e.message)
+      throw e
+    }
+
+
+  },[])
+  const clearError = useCallback(() => setError(null), [])
+
 
   const _apiBase = 'https://gateway.marvel.com:443/v1/public/'
   const _apiKey = 'apikey=fe0e8ca4e40111d278e95e2423938695'
